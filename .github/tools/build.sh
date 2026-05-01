@@ -15,17 +15,19 @@ echo "========================================"
 mkdir -p "$BIN_DIR" "$DIST_DIR"
 
 echo "Downloading binaries..."
-for ARCH in arm arm64; do
+# arm32 omitted: 1orz fork build host (aarch64 Termux) lacks an armv7 cross-toolchain.
+# Modern Android devices are arm64-v8a; arm32 users should fall back to anasfanani's release.
+for ARCH in arm64; do
   case $ARCH in
     arm) F_ARCH=armv7a ;;
     arm64) F_ARCH=aarch64 ;;
   esac
-  
+
   echo "- Downloading tailscaled for ${ARCH}..."
   URL=$(get_latest_release "1orz/tailscale-android-cli-fork" "tailscale_.*_${ARCH}\.tgz")
   curl -#L "$URL" | tar -xz -C "$BIN_DIR"
   mv "$BIN_DIR/tailscaled" "$BIN_DIR/tailscaled-$ARCH"
-  
+
   echo "- Downloading jq for ${ARCH}..."
   URL=$(get_latest_release "theshoqanebi/jq-build-for-android" "jq-${F_ARCH}-linux-android")
   curl -#L "$URL" -o "$BIN_DIR/jq-$ARCH"
