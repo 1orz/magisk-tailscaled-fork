@@ -74,8 +74,8 @@ jobs:
             - **Magisk-Tailscaled-${{ steps.version.outputs.version }}-full.zip** - Complete package (includes all binaries)
             
             ## Download Stats
-            ![GitHub Downloads](https://img.shields.io/github/downloads/anasfanani/Magisk-Tailscaled/${{ steps.version.outputs.version }}/Magisk-Tailscaled-${{ steps.version.outputs.version }}.zip?style=flat&logo=docusign&logoColor=green&label=Lightweight)
-            ![GitHub Downloads](https://img.shields.io/github/downloads/anasfanani/Magisk-Tailscaled/${{ steps.version.outputs.version }}/Magisk-Tailscaled-${{ steps.version.outputs.version }}-full.zip?style=flat&logo=docusign&logoColor=green&label=Full%20Package)
+            ![GitHub Downloads](https://img.shields.io/github/downloads/${{ github.repository }}/${{ steps.version.outputs.version }}/Magisk-Tailscaled-${{ steps.version.outputs.version }}.zip?style=flat&logo=docusign&logoColor=green&label=Lightweight)
+            ![GitHub Downloads](https://img.shields.io/github/downloads/${{ github.repository }}/${{ steps.version.outputs.version }}/Magisk-Tailscaled-${{ steps.version.outputs.version }}-full.zip?style=flat&logo=docusign&logoColor=green&label=Full%20Package)
 
       - name: Update JSON with release URLs
         env:

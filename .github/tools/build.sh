@@ -15,9 +15,7 @@ echo "========================================"
 mkdir -p "$BIN_DIR" "$DIST_DIR"
 
 echo "Downloading binaries..."
-# arm32 omitted: 1orz fork build host (aarch64 Termux) lacks an armv7 cross-toolchain.
-# Modern Android devices are arm64-v8a; arm32 users should fall back to anasfanani's release.
-for ARCH in arm64; do
+for ARCH in arm arm64; do
   case $ARCH in
     arm) F_ARCH=armv7a ;;
     arm64) F_ARCH=aarch64 ;;
