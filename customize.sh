@@ -86,7 +86,7 @@ for f in "$TS_BIN_DIR"/*-"$ARCH"; do
 done
 
 [ -f "$TS_BIN_DIR/tailscaled" ] || {
-	gh_download "anasfanani/tailscale-android-cli" "tailscale_.*_${ARCH}\.tgz" || abort "error: Unable to download."
+	gh_download "1orz/tailscale-android-cli-fork" "tailscale_.*_${ARCH}\.tgz" || abort "error: Unable to download."
 	tar -xzf "$TMPDIR/$FILENAME" -C $TS_BIN_DIR || abort "error: Unable extract archive."
 }
 

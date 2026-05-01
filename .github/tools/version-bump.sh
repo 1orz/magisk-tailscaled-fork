@@ -51,7 +51,7 @@ sed -i "s/^versionCode=.*/versionCode=$NEW_VERSION_CODE/" module.prop
 # Update all JSON files
 for json_file in update.json update-arm.json update-arm64.json; do
   jq --arg v "$NEW_VERSION" --arg vc "$NEW_VERSION_CODE" \
-    '.version = $v | .versionCode = $vc | .zipUrl = "https://github.com/anasfanani/Magisk-Tailscaled/releases/download/\($v)/Magisk-Tailscaled-\($v).zip" | .changelog = "https://raw.githubusercontent.com/anasfanani/Magisk-Tailscaled/master/CHANGELOG.md"' \
+    '.version = $v | .versionCode = $vc | .zipUrl = "https://github.com/1orz/magisk-tailscaled-fork/releases/download/\($v)/Magisk-Tailscaled-\($v).zip" | .changelog = "https://raw.githubusercontent.com/1orz/magisk-tailscaled-fork/master/CHANGELOG.md"' \
     "$json_file" > "${json_file}.tmp" && mv "${json_file}.tmp" "$json_file"
 done
 
