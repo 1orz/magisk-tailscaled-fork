@@ -1,3 +1,7 @@
+## v2.0.0.2
+
+- 1ae882d ci: restore arm + arm64 dual-arch build, parameterize shields URL
+
 ## v2.0.0.1
 
 - 429e1b0 build: fix version bump and add pre-release for build version
